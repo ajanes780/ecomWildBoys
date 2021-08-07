@@ -13,9 +13,9 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome to Company Name',
-  Keywords: 'Welcome to Company Name',
-  description: ' We sell the best stuff for cheap',
+  title: 'Wildboys Campouts',
+  Keywords: 'Campouts, camping, motorcycles , harley',
+  description: 'We do campouts',
 };
 
 export default Meta;
