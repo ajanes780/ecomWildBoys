@@ -39,7 +39,7 @@ const CartScreen = ({ match, location, history }) => {
         {cartItems.length === 0 ? (
           <Message>
             {' '}
-            Your cart is empty <Link to='/'> Go Back</Link>
+            Your cart is empty <Link to='/store'> Go Back</Link>
           </Message>
         ) : (
           <ListGroup className='py-3' variant='flush'>

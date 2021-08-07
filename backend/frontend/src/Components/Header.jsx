@@ -20,7 +20,7 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>Your Company Name Here </Navbar.Brand>
+            <Navbar.Brand>The Wild Boys Campouts</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -29,6 +29,11 @@ const Header = () => {
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/Store'>
+                <Nav.Link>
+                  <i class='fas fa-store'></i> Store
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (

@@ -6,7 +6,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className='text-center py-3'>
-            Copywright &copy; Your Company
+            Copywright &copy; The Wild Boys Campouts
             <br />
             <a href='https://www.ignitewebdesign.ca' rel='noreferrer' target='_blank'>
               Forged by Ignite Web Development & Design
