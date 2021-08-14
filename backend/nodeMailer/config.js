@@ -10,6 +10,16 @@ const nodeMailer = async (order) => {
 
   // create reusable transporter object using the default SMTP transport
 
+  const orderItems = (order) => {
+    for (let i = 0; i < order.orderItems.length; i++) {
+      let orderItemName = order.orderItems[i].name;
+      let OrderItemPrice = order.orderItems[i].price;
+
+      const items = { name: orderItemName, price: OrderItemPrice };
+    }
+    return items;
+  };
+
   const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
@@ -22,9 +32,9 @@ const nodeMailer = async (order) => {
   let info = await transporter.sendMail({
     from: '"Fred Foo 👻" <foo@example.com>', // sender address
     to: order.user.email, // list of receivers
-    subject: order.id, // Subject line
+    subject: `Order number ${order.id}`, // Subject line
     text: 'Here is your order details', // plain text body
-    html: `<b> Hey ${order.user.name} thanks! , Here are  your order details </b> ${order.orderItems.name} ${order.orderItems.name}`, // html body
+    html: `<b> Hey ${order.user.name} thanks! , Here are  your order details </b> ${orderObject.name} ${orderObject.price}`, // html body
   });
 
   console.log('Message sent: %s', info.messageId);
@@ -37,4 +47,4 @@ const nodeMailer = async (order) => {
 
 // main().catch(console.error);
 
-export default nodeMailer;
+export { nodeMailer, orderItems };
