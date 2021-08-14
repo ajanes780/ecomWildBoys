@@ -1,5 +1,6 @@
 import Order from '../models/orderModel.js';
 import asyncHandler from 'express-async-handler';
+import nodeMailer from '../nodeMailer/config.js';
 
 //  @desc Create new order
 //  @route POST /api/orders
@@ -37,8 +38,8 @@ const getOrderById = asyncHandler(async (req, res) => {
 //  @route Get /api/orders/:id/pay
 //  @access  private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
-  const order = await Order.findById(req.params.id);
-
+  const order = await Order.findById(req.params.id).populate('user', 'name email');
+  console.log(`order`, order);
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
@@ -49,6 +50,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
       email: req.body.payer.email_address,
     };
     const updatedOrder = await order.save();
+    nodeMailer(order);
     res.json(updatedOrder);
   } else {
     res.status(404);
