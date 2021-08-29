@@ -8,6 +8,8 @@ import Loader from '../Components/loader';
 import Message from '../Components/Message';
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 import Meta from '../Components/Meta';
+
+
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
@@ -78,7 +80,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>{product.price}</strong>
+                        $<strong>{product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -109,6 +111,7 @@ const ProductScreen = ({ history, match }) => {
                       ADD TO CART
                     </Button>
                   </ListGroup.Item>
+                  <Image src='/wbc-logo-no-txt.png' alt='logo' fluid />
                 </ListGroup>
               </Card>
             </Col>

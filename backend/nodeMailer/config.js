@@ -9,32 +9,34 @@ const nodeMailer = async (order) => {
   // let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
-
-  const orderItems = (order) => {
-    for (let i = 0; i < order.orderItems.length; i++) {
-      let orderItemName = order.orderItems[i].name;
-      let OrderItemPrice = order.orderItems[i].price;
-
-      const items = { name: orderItemName, price: OrderItemPrice };
-    }
-    return items;
-  };
+  // const message = order.orderItems.map((item) => item.name, item.price);
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
+    host: 'smtp.gmail.com',
     port: 587,
     auth: {
-      user: 'missouri42@ethereal.email',
-      pass: 'CCxZ2pbFpnWCVNMhZh',
+      user: 'thewildboyscampout@gmail.com',
+      pass: 'Mnbvcxz90$',
     },
   });
-  // send mail with defined transport object
+
+  let name, price, qty;
+  for (let x = 0; x < order.orderItems.length; x++) {
+    name = order.orderItems[x].name;
+    price = order.orderItems[x].price;
+    qty = order.orderItems[x].qty;
+  }
+
   let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
+    from: '"The Wild Boys" <thewildboyscampout@gmail.com>', // sender address
     to: order.user.email, // list of receivers
-    subject: `Order number ${order.id}`, // Subject line
+    subject: `Order number ${order.id.slice(order.id.length - 5)}`, // Subject line
     text: 'Here is your order details', // plain text body
-    html: `<b> Hey ${order.user.name} thanks! , Here are  your order details </b> ${orderObject.name} ${orderObject.price}`, // html body
+    html: `<b> Hey ${order.user.name} thanks!,<br/> Here are  your order details
+        ${name} - $${price} x  ${qty}
+    </b>
+    
+    `,
   });
 
   console.log('Message sent: %s', info.messageId);
@@ -47,4 +49,4 @@ const nodeMailer = async (order) => {
 
 // main().catch(console.error);
 
-export { nodeMailer, orderItems };
+export default nodeMailer;

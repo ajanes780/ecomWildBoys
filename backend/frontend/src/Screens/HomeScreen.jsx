@@ -26,13 +26,8 @@ const HomeScreen = ({ match }) => {
   return (
     <>
       <Meta />
-      {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link to='/store' className='btn btn-light'>
-          Go back
-        </Link>
-      )}
+
+{keyword && <Link to="/store" className="btn btn-light" > Go Back</Link>}
       <h1> Latest Products</h1>
       {loading ? (
         <Loader />
@@ -57,3 +52,12 @@ const HomeScreen = ({ match }) => {
 };
 
 export default HomeScreen;
+
+
+// {!keyword ? (
+//   <ProductCarousel />
+// ) : (
+//   <Link to='/store' className='btn btn-light'>
+//     Go back
+//   </Link>
+// )}
