@@ -10,12 +10,15 @@ const LandingPage = () => {
           {' '}
           THE WILD BOYS CAMPOUT
         </h1>
-        <h2 style={{ textAlign: 'center', lineHeight: '2.5rem' }}>
-          The Wild Boys Camp-Out was established in 2020 by a bunch of blue collar, beer drinking, eagle riding motorcycle hooligans. We started by spontaneously putting together a casual last minute camp-out that more
-          than 100 people attended. When this began we never had the intentions to make it an annual event but because of how memorable the camp-outs turned out, we decided to make this a summer event in hopes of
-          bringing even more of the motorcycle community together. The Wild Boys Camp Out welcomes anyone and everyone we just ask that you respect one another, the environment and your surroundings. Stay safe, stay
-          wild. ~Wild Boys Camp Out
-        </h2>
+        <h4 style={{ textAlign: 'center', lineHeight: '2.5rem' }}>
+          SEASON ENDER !! WILD BOYZZZ!! . LETS CLOSE THE SEASON OUT RIGHT WITH A DEADLY PARTY! . Tickets at the gate 40 dollars. . LOCATION Six Pak saloon 22524 Highway 37 Sturgeon County AB T8L 5E6 Canada . MUSIC
+          @el_niven @upsidedowntown.ca DJ Skoden . STAY THE NIGHT PITCH YOUR TENT CAMPOUT! Everyone is welcome tons of parking for trailers motorcycles or whatever u wanna bring. Pitch a tent remember this is still a
+          campout! Plus if you don’t wanna stay the night but wanna drink a few cold ones… guess what cabs and Uber will pick you up and drive you home safely. . This is not a party you wanna miss. Live music the best
+          local vendors and company’s. 18+ BYOB or drinks by donations at the saloon. . Food trucks on site. . We will be collecting donations for @kwcsyeg On location. . Plus tons more exciting stuff if you’ve been to a
+          wild boys campout you know what to expect. . VENDORS / SPONSORS @tn_industries @tripsixkustoms @lifesentencecycles @hdedmonton @death.defied @eville.empire @odinmfg @fuel_the_chaos @northern_cycles
+          @showdowntattoos @fkndeadly @skulldefy @kevin_lemire_designer @topyography @3astc0ast1 @broadsquadinc_ @kelevramotorcycles @hamiltonaudio @world_famous_sideshow_tattoo @coyoteblonde @rocking.chair.spirits
+          @elite_touring_innovations
+        </h4>
         <Row className='d-flex justify-content-center align-items-center'>
           <Button className='btn col-4 m-3 rounded' href='https://www.instagram.com/thewildboyscampout/?hl=en' variant='warning' target='_blank'>
             Instagram

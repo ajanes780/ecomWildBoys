@@ -244,6 +244,7 @@ export const logout = () => (dispatch) => {
   localStorage.removeItem('cartItems');
   localStorage.removeItem('shippingAddress');
   localStorage.removeItem('paymentMethod');
+  localStorage.removeItem('__paypal_storage__');
 
   dispatch({
     type: USER_LOGOUT,
