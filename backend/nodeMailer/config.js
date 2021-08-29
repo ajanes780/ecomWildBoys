@@ -34,6 +34,9 @@ const nodeMailer = async (order) => {
     text: 'Here is your order details', // plain text body
     html: `<b> Hey ${order.user.name} thanks!,<br/> Here are  your order details
         ${name} - $${price} x  ${qty}
+        You can pick up your bracelet at the gate with valid ID that matches the name on your order
+        Cheers,<br/>
+        The Wild Boys
     </b>
     
     `,
